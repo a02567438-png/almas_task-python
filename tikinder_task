@@ -1,0 +1,31 @@
+from tkinter import *
+root=Tk()
+root.title('GUI Demo Window')
+root.geometry('800x800')
+frame=Frame(root,bg="White",bd=5,relief="solid")
+frame.place(x=0,y=0,width=1320,height=1320)
+root.maxsize(width=750,height=500)
+root.minsize(width=500,height=350)
+root.configure(bg="#B5B9F0")
+label=Label(root,text="HOME PAGE",font=("times","22","bold"),fg='red',bg="violet")
+label.place(x=200,y=3)
+
+label=Label(root,text="user name",font=("times","22","bold"),fg='red',bg="#EFEABB")
+label.place(x=20,y=30)
+user=Entry(root,width=20,justify='center',show="*",font=("times","22","bold"))
+user.place(x=210,y=40)
+label=Label(root,text="password",font=("times","22","bold"),fg='red',bg="#EFEABB")
+label.place(x=20,y=100)
+user=Entry(root,width=20,justify='center',show="*",font=("times","22","bold"))
+user.place(x=210,y=100)
+label=Label(root,text="e-mail",font=("times","22","bold"),fg='red',bg="#EFEABB")
+label.place(x=30,y=180)
+user=Entry(root,width=20,justify='center',show="*",font=("times","22","bold"))
+user.place(x=210,y=189)
+label=Label(root,text="finish",font=("times","22","bold"),fg='red',bg="#EFEABB",relief='raised')
+label.place(x=500,y=250)
+label=Label(root,text="cancel",font=("times","22","bold"),fg='red',bg="#EFEABB",relief='raised')
+label.place(x=590,y=250)
+
+
+kinder
