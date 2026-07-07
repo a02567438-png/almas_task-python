@@ -1,0 +1,229 @@
+from tkinter import *
+from PIL import Image,ImageTk
+from sample_1 import *
+root = Tk()
+root.title("Grocery Management System")
+
+root.geometry("1200x700")
+root.config(bg="lightyellow")
+ima=Image.open(r"D:\super_mk.png")
+im=ima.resize((300,300))
+iz=ImageTk.PhotoImage(im)
+label=Label(root,image=iz,font=("times","22","bold"),fg='red',bg="violet")
+label.place(x=80,y=100)
+
+label=Label(root,text="WELCOME TO MY GROCERY SHOP",font=("times","22","bold"),fg='red',bg="#EFEABB")
+label.place(x=400,y=30)
+
+label=Label(root,text="SHOPPING IS NOT ONLY STREEE BUSTER BUT IT IS EVERYTHING",font=("fisedsys","22","bold"),fg='red',bg="#EFEABB")
+label.place(x=200,y=500)
+
+bt=Button(root,text="close",font=('castellar',"28",'bold'),bg="purple",fg="black")
+
+bt.place(x=500,y=280)
+def demo():
+    root.destroy()
+    next_page()
+bt1=Button(
+    root,text="next",
+    font=('castellar',"28",'bold'),
+    bg="purple",
+    fg="black",
+    command=demo
+    )
+
+bt1.place(x=669,y=280)
+
+root.mainloop()
+from tkinter import *
+from PIL import Image,ImageTk
+import email
+def next_page():
+        
+        root = Tk()
+        root.title("ALMEN Grocery SHOPE")
+        wid=root.winfo_screenwidth()
+        he=root.winfo_screenheight()
+        root.geometry(f"{wid}x{he}")
+        root.config(bg="lightyellow")
+        
+        #==================== TITLE ====================#
+        title = Label(root,
+                      text="ALMEN GROCERY SHOPE",
+                      font=("Arial", 24, "bold"),
+                      bg="green",
+                      fg="white",
+                      pady=10)
+        title.pack(fill=X)
+
+        #==================== CUSTOMER FRAME ====================#
+        customer_frame = LabelFrame(root,
+                                    text="Customer Details",
+                                    font=("Arial", 14, "bold"),
+                                    bg="white",
+                                    padx=10,
+                                    pady=10)
+        customer_frame.place(x=20, y=70, width=1160, height=100)
+
+        Label(customer_frame, text="Customer Name",
+              font=("Arial",12,"bold"),
+              bg="white").grid(row=0,column=0,padx=10,pady=10)#padx-space left and right,pady=space above and below
+
+
+        entry_name = Entry(customer_frame,font=("Arial",12),width=20)
+        entry_name.grid(row=0,column=1,padx=10)
+
+        Label(customer_frame, text="Phone",
+              font=("Arial",12,"bold"),
+              bg="white").grid(row=0,column=2,padx=10,pady=10)
+        entry_phone = Entry(customer_frame,font=("Arial",12),width=20)
+        entry_phone.grid(row=0,column=3,padx=10)
+        
+        Label(customer_frame, text="email",
+              font=("Arial",12,"bold"),
+              bg="white").grid(row=0,column=4,padx=10,pady=10)
+        entry_email = Entry(customer_frame,font=("Arial",12),width=20)
+        entry_email.grid(row=0,column=5,padx=10)
+        
+        #==================== ITEMS FRAME ====================#
+        items_frame = LabelFrame(root,
+                                 text="Grocery Items",
+                                 font=("Arial",14,"bold"),
+                                 bg="white",
+                                 padx=10,
+                                 pady=10)
+        items_frame.place(x=20,y=190,width=500,height=420)
+
+        Label(items_frame,text="Rice (kg)₹60",font=("Arial",12),bg="white").grid(row=0,column=0,pady=10)
+        rice = Entry(items_frame,width=10)
+        rice.grid(row=0,column=1)
+
+        Label(items_frame,text="Sugar (kg)₹50",font=("Arial",12),bg="white").grid(row=1,column=0,pady=10)
+        sugar = Entry(items_frame,width=10)
+        sugar.grid(row=1,column=1)
+
+        Label(items_frame,text="Oil (lL)₹125",font=("Arial",12),bg="white").grid(row=2,column=0,pady=10)
+        oil = Entry(items_frame,width=10)
+        oil.grid(row=2,column=1)
+
+        Label(items_frame,text="Milk(l)₹44",font=("Arial",12),bg="white").grid(row=3,column=0,pady=10)
+        milk = Entry(items_frame,width=10)
+        milk.grid(row=3,column=1)
+
+
+        Label(items_frame,text="Eggs(count)₹6",font=("Arial",12),bg="white").grid(row=4,column=0,pady=10)
+        eggs = Entry(items_frame,width=10)
+        eggs.grid(row=4,column=1)
+
+        Label(items_frame,text="snacks(packet)₹10",font=("Arial",12),bg="white").grid(row=5,column=0,pady=10)
+        snacks = Entry(items_frame,width=10)
+        snacks.grid(row=5,column=1)
+ 
+
+
+        #==================== BILL FRAME ====================#
+        bill_frame = LabelFrame(root,
+                                text="Bill",
+                                font=("Arial",14,"bold"),
+                                bg="white")
+        bill_frame.place(x=550,y=190,width=630,height=420)
+
+        bill_text = Text(bill_frame,font=("Courier New",12))
+        bill_text.pack(fill=BOTH,expand=True)
+        email = entry_email.get().strip()
+        def total_bill():
+            bill_text.delete(1.0, END)
+            total = 0
+
+            email = entry_email.get().strip()
+
+            if len(email) < 8:
+                bill_text.insert(END, "Email must contain at least 8 characters.")
+                return
+
+            if "@" not in email or "." not in email:
+                bill_text.insert(END, "Enter a valid email address.")
+                #return
+
+    # Rice, Sugar, Oil... calculations come here
+
+            if rice.get()!="":
+                qty=int(rice.get())
+                price = qty * 60
+                total += price
+                bill_text.insert(END, f"Rice\t{qty}\tRs.{price}\n")
+
+            if sugar.get() != "":
+                qty = int(sugar.get())
+                price = qty * 50
+                total += price
+                bill_text.insert(END, f"Sugar\t{qty}\tRs.{price}\n")
+
+            if oil.get() != "":
+                qty = int(oil.get())
+                price = qty * 125
+                total += price
+                bill_text.insert(END, f"Oil\t{qty}\tRs.{price}\n")
+
+            if milk.get() != "":
+                qty = int(milk.get())
+                price = qty * 44
+                total += price
+                bill_text.insert(END, f"Milk\t{qty}\tRs.{price}\n")
+
+            if eggs.get() != "":
+                qty = int(eggs.get())
+                price = qty * 6
+                total += price
+                bill_text.insert(END, f"Eggs\t{qty}\tRs.{price}\n")
+
+            if snacks.get() != "":
+                qty = int(snacks.get())
+                price = qty * 10
+                total += price
+                bill_text.insert(END, f"Snacks\t{qty}\tRs.{price}\n")
+
+            bill_text.insert(END, "=========================\n")
+            bill_text.insert(END, f"Total\t\tRs.{total}")
+            
+            
+        
+
+           
+
+        #==================== BUTTON FRAME ====================
+        
+
+        button_frame = Frame(root, bg="lightyellow")
+        button_frame.place(x=20, y=630, width=1160, height=50)
+
+        bt1 = Button(button_frame,
+                     text="Total Bill",
+                     font=("Arial",12,"bold"),
+                     bg="red",
+                     fg="white",
+                     command=total_bill)
+        bt1.place(x=5, y=5, width=150, height=40)
+
+        bt2 = Button(button_frame,
+                     text="EXIT",
+                     font=("Arial",12,"bold"),
+                     bg="red",
+                     fg="white",
+                     command=root.destroy)
+        bt2.place(x=160, y=5, width=150, height=40)
+                
+##       
+        
+        
+        
+        root.mainloop() 
+        
+
+
+
+
+
+
+
+
