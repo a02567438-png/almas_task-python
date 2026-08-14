@@ -1,0 +1,707 @@
+//1.Create an Employee class containing name and salary. Create a Manager class that inherits from Employee and displays all details.                                                                                                                                                                                                                  2.Create three classes:
+//
+//Student ? Exam ? Result
+//
+//Get student details and marks and display the result.                    3. A student has information from two classes: Academic and Sports. Create a Student class that inherits both.             4. Create a base class Shape and derive Circle and Rectangle from it. Calculate their areas.                                   5. Create a calculator using function overloading to perform addition of 2 and 3 numbers.                                                       6. Create a base class Animal with sound(). Override it in Dog.                                                                                                 7. Demonstrate runtime polymorphism using a base-class pointer.                                                                                             8. Create an abstract class Shape with a pure virtual function area(). Implement it in Circle and Rectangle.            9. Create a payment system where different payment methods implement pay() differently.                                       10. A company has Developer and Tester. Both inherit from Employee, but their work is different.                                          11. Create a Vehicle class and derive Car and Bike. Each vehicle should have a different start() behavior.                      12. Create an Employee base class. Manager and Developer should calculate salary differently.                                              13. Create different classes for calculating areas. Use a base-class pointer.                                                                         14. Create a program for a Food Delivery System.
+//
+//Different food types:
+//
+//Pizza
+//Burger
+//Biryani
+//
+//All should have a prepare() function, but each prepares food differently.
+#include <iostream>
+using namespace std;
+/*
+class Animal
+{
+public:
+    virtual void sound()
+    {
+        cout << "Animal makes sound";
+    }
+};
+
+class Dog : public Animal
+{
+public:
+    void sound()
+    {
+        cout << "Dog says Bow Bow";
+    }
+};
+
+int main()
+{
+    Dog d;
+
+    d.sound();
+
+    return 0;
+}
+
+
+class Employee
+{
+private:
+    string name;
+    int salary;
+
+public:
+    void getData()
+    {
+        cout << "Enter name: ";
+        cin >> name;
+
+        cout << "Enter salary: ";
+        cin >> salary;
+    }
+
+    string getName()
+    {
+        return name;
+    }
+
+    int getSalary()
+    {
+        return salary;
+    }
+};
+
+class Manager : public Employee
+{
+public:
+    void display()
+    {
+        cout << "\nName: " << getName();
+        cout << "\nSalary: " << getSalary();
+    }
+};
+
+int main()
+{
+    Manager m;
+
+    m.getData();
+    m.display();
+
+    return 0;
+}
+
+
+class Student
+{
+private:
+    string name;
+    int rollno;
+
+public:
+    void getStudent()
+    {
+        cout << "Enter name: ";
+        cin >> name;
+
+        cout << "Enter roll number: ";
+        cin >> rollno;
+    }
+
+    string getName()
+    {
+        return name;
+    }
+
+    int getRollno()
+    {
+        return rollno;
+    }
+};
+
+class Exam : public Student
+{
+private:
+    int mark;
+
+public:
+    void getMarks()
+    {
+        cout << "Enter mark: ";
+        cin >> mark;
+    }
+
+    int getMark()
+    {
+        return mark;
+    }
+};
+
+class Result : public Exam
+{
+public:
+    void display()
+    {
+        cout << "\nName: " << getName();
+        cout << "\nRoll No: " << getRollno();
+        cout << "\nMark: " << getMark();
+
+        if(getMark() >= 40)
+            cout << "\nResult: Pass";
+        else
+            cout << "\nResult: Fail";
+    }
+};
+
+int main()
+{
+    Result r;
+
+    r.getStudent();
+    r.getMarks();
+    r.display();
+
+    return 0;
+}
+
+
+class Academic
+{
+protected:
+    int mark;
+
+public:
+    void getAcademic()
+    {
+        cout << "Enter academic mark: ";
+        cin >> mark;
+    }
+};
+
+class Sports
+{
+protected:
+    int score;
+
+public:
+    void getSports()
+    {
+        cout << "Enter sports score: ";
+        cin >> score;
+    }
+};
+
+class Student : public Academic, public Sports
+{
+public:
+    void display()
+    {
+        cout << "\nAcademic Mark: " << mark;
+        cout << "\nSports Score: " << score;
+    }
+};
+
+int main()
+{
+    Student s;
+
+    s.getAcademic();
+    s.getSports();
+    s.display();
+
+    return 0;
+}
+
+//shape
+class Shape
+{
+	public:
+		void display()
+		{
+			cout<<"Shape";
+		}
+};
+class Circle: public Shape
+{
+	private:
+		float r;
+	public:
+		void getData()
+		{
+			cout<<"enter radius:";
+			cin>>r;
+		}
+		void area()
+		{
+			cout<<"Circle Area ="<<3.14*r*r;
+		}
+};
+class Rectangle:public Shape{
+	private:
+		int l,b;
+	public:
+		void getData()
+		{
+			cout<<"\nEnter length";
+			cin>>l;
+			cout<<"\nEnter breth";
+			cin>>b;
+		}
+		void area()
+		{
+			cout<<"Rectangle Area="<<l*b;
+		}
+		
+};
+int main()
+{
+	Circle c;
+	Rectangle r;
+	c.getData();
+	c.area ();
+	
+	r.getData();
+	r.area();
+	
+	return 0;
+}
+
+
+
+class Calculator
+{
+public:
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+
+    int add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+};
+
+int main()
+{
+    Calculator c;
+
+    cout << "Addition of 2 numbers = ";
+    cout << c.add(10, 20);
+
+    cout << "\nAddition of 3 numbers = ";
+    cout << c.add(10, 20, 30);
+
+    return 0;
+}
+
+
+
+class Animal
+{
+public:
+    virtual void sound()
+    {
+        cout << "Animal sound";
+    }
+};
+
+class Dog : public Animal
+{
+public:
+    void sound()
+    {
+        cout << "Dog says Bow Bow";
+    }
+};
+
+int main()
+{
+    Animal *a;
+
+    Dog d;
+
+    a = &d;
+
+    a->sound();
+
+    return 0;
+}
+
+
+class Shape
+{
+public:
+    virtual void area() = 0;
+};
+
+class Circle : public Shape
+{
+private:
+    float r;
+
+public:
+    void getData()
+    {
+        cout << "Enter radius: ";
+        cin >> r;
+    }
+
+    void area()
+    {
+        cout << "Circle Area = " << 3.14 * r * r;
+    }
+};
+
+class Rectangle : public Shape
+{
+private:
+    int l, b;
+
+public:
+    void getData()
+    {
+        cout << "\nEnter length: ";
+        cin >> l;
+
+        cout << "Enter breadth: ";
+        cin >> b;
+    }
+
+    void area()
+    {
+        cout << "Rectangle Area = " << l * b;
+    }
+};
+
+int main()
+{
+    Circle c;
+    Rectangle r;
+
+    c.getData();
+    c.area();
+
+    r.getData();
+    r.area();
+
+    return 0;
+}
+
+
+
+class Payment
+{
+public:
+    virtual void pay()
+    {
+        cout << "Payment";
+    }
+};
+
+class UPI : public Payment
+{
+public:
+    void pay()
+    {
+        cout << "Payment using UPI";
+    }
+};
+
+class Card : public Payment
+{
+public:
+    void pay()
+    {
+        cout << "Payment using Card";
+    }
+};
+
+class Cash : public Payment
+{
+public:
+    void pay()
+    {
+        cout << "Payment using Cash";
+    }
+};
+
+int main()
+{
+    UPI u;
+    Card c;
+    Cash ca;
+
+    u.pay();
+
+    cout << "\n";
+
+    c.pay();
+
+    cout << "\n";
+
+    ca.pay();
+
+    return 0;
+}
+
+
+
+class Employee
+{
+private:
+    string name;
+
+public:
+    void getName()
+    {
+        cout << "Enter name: ";
+        cin >> name;
+    }
+
+    string getNameValue()
+    {
+        return name;
+    }
+};
+
+class Developer : public Employee
+{
+public:
+    void work()
+    {
+        cout << getNameValue() << " develops software";
+    }
+};
+
+class Tester : public Employee
+{
+public:
+    void work()
+    {
+        cout << getNameValue() << " tests software";
+    }
+};
+
+int main()
+{
+    Developer d;
+    Tester t;
+
+    d.getName();
+    d.work();
+
+    cout << "\n";
+
+    t.getName();
+    t.work();
+
+    return 0;
+}
+
+
+class Vehicle
+{
+public:
+    virtual void start()
+    {
+        cout << "Vehicle starts";
+    }
+};
+
+class Car : public Vehicle
+{
+public:
+    void start()
+    {
+        cout << "Car starts with key";
+    }
+};
+
+class Bike : public Vehicle
+{
+public:
+    void start()
+    {
+        cout << "Bike starts with self start";
+    }
+};
+
+int main()
+{
+    Car c;
+    Bike b;
+
+    c.start();
+
+    cout << "\n";
+
+    b.start();
+
+    return 0;
+}
+
+
+/*
+class Employee
+{
+public:
+    virtual void salary()
+    {
+        cout << "Employee salary";
+    }
+};
+
+class Manager : public Employee
+{
+public:
+    void salary()
+    {
+        cout << "Manager salary = 80000";
+    }
+};
+
+class Developer : public Employee
+{
+public:
+    void salary()
+    {
+        cout << "Developer salary = 60000";
+    }
+};
+
+int main()
+{
+    Manager m;
+    Developer d;
+
+    m.salary();
+
+    cout << "\n";
+
+    d.salary();
+
+    return 0;
+}
+
+
+class Shape
+{
+public:
+    virtual void area() = 0;
+};
+
+class Circle : public Shape
+{
+private:
+    float r;
+
+public:
+    void getData()
+    {
+        cout << "Enter radius: ";
+        cin >> r;
+    }
+
+    void area()
+    {
+        cout << "Circle Area = " << 3.14 * r * r;
+    }
+};
+
+class Rectangle : public Shape
+{
+private:
+    int l, b;
+
+public:
+    void getData()
+    {
+        cout << "\nEnter length: ";
+        cin >> l;
+
+        cout << "Enter breadth: ";
+        cin >> b;
+    }
+
+    void area()
+    {
+        cout << "Rectangle Area = " << l * b;
+    }
+};
+
+int main()
+{
+    Shape *s;
+
+    Circle c;
+    Rectangle r;
+
+    c.getData();
+
+    s = &c;
+    s->area();
+
+    r.getData();
+
+    s = &r;
+    s->area();
+
+    return 0;
+}
+
+//FOOD DELIVARY SYSTEM
+
+class Food
+{
+public:
+    virtual void prepare()
+    {
+        cout << "Preparing food";
+    }
+};
+
+class Pizza : public Food
+{
+public:
+    void prepare()
+    {
+        cout << "Preparing Pizza with cheese";
+    }
+};
+
+class Burger : public Food
+{
+public:
+    void prepare()
+    {
+        cout << "Preparing Burger with bun";
+    }
+};
+
+class Biryani : public Food
+{
+public:
+    void prepare()
+    {
+        cout << "Preparing Biryani with rice and spices";
+    }
+};
+
+int main()
+{
+    Pizza p;
+    Burger b;
+    Biryani bi;
+
+    p.prepare();
+
+    cout << "\n";
+
+//    b.prepare();
+//
+//    cout << "\n";
+//
+//    bi.prepare();
+
+    return 0;
+}
+*/
