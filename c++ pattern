@@ -1,0 +1,248 @@
+//left star
+#include<iostream>
+//using namespace std;
+//int main(){
+//
+//
+//for(int i=1;i<=5;i++)
+//{
+//	for(int j=1;j<=i;j++)
+//	{
+//		cout<<"*";
+//	}
+//	cout<<endl;
+//	
+//}
+//return 0;
+
+//swapping num
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int a,b,temp;
+//	cout<<"enter two numbers";
+//	cin>>a>>b;
+//	temp=a;//strore value
+//	a=b;
+//	b=temp;
+//	cout<<"after swapping"<<endl;
+//	cout<<"a="<<a<<endl;
+//	cout<<"b="<<b<<endl;
+//	return 0;
+//}
+//  
+
+		        
+
+//add num and sub
+#include<iostream> 
+//int main(int argc,char**)
+//{
+//	int a=10;
+//	int b=2;
+//	std::cout<<a+b<<std::endl;
+//	std::cout<<a-b<<std::endl;
+//	return 0;
+//  }  
+  //odd num
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//
+//for(int i=1;i<=20;i+=2)
+//
+//	cout<<i<<endl;
+//	return 0;
+//}
+
+//pattens
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int n=5;
+//	char let='a';
+//	for(int i=1;i<=n;i++){
+//		for(int j=1;j<=i;j++){
+//			cout<<j;
+//			
+//		}
+//		cout<<endl;
+//	}
+//	return 0;
+//}
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int n;
+//	cout<<"enter a number";
+//	cin>>n;
+//	char let='A';
+//	for(int i=1;i<=n;i++){
+//		for(int j=1;j<=i;j++){
+//			cout<<let<<" ";
+//		}
+//		++let;
+//		cout<<endl;
+//	}
+//	return 0;
+//}
+#include<iostream>
+//using namespace std;
+//int main(){
+//	int n=5;
+//	char let='a';
+//	for(int i=1;i<=n;i++){
+//		for(int j=1;j<=i;j++){
+//			cout<<let++;
+//		}
+//	cout<<endl;
+//	}
+//	return 0;
+//}
+//alphabets
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int n=5;
+//	char let ='a';
+//	for(int i=1;i<=n;i++){
+//		for(int j=1;j<=i;j++){
+//			cout<<let++;
+//		}
+//		cout<<endl;
+//	}
+//	return 0;
+//}
+#include <iostream>
+//using namespace std;
+//int main()
+//{
+//	int n=5;
+//	
+//	for(int i=n;i>=1;i--){
+//		for(int j=n-i;j>=0;j--){
+//			cout<<" ";
+//		}
+//		for(int k=i;k>=1;k--){
+//			cout<<"*";
+//		}
+//	cout<<endl;
+//	}
+//	return 0;
+//}
+//down tringale
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int n=5;
+//	for(int i=n;i>=1;i--){
+//		for(int j=n-i;j>=0;j--){
+//			cout<<" ";
+//		}
+//		for(int k=i;k>=1;k--){
+//			cout<<"* ";
+//		}
+//		cout<<endl;
+//	}
+//	return 0;
+//}
+//squate pattern
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	for(int i=1;i<=5;i++)
+//	{
+//		for(int j=1;j<=5;j++)
+//		{
+//			cout<<"* ";
+//		}
+//		cout<<endl;
+//	}
+//	return 0;
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	for(int i=1;i<=5;i++)
+//	{
+//		for(int j=1;j<=5;j++)
+//		{
+//			cout<<"* ";
+//		}
+//		cout<<endl;
+//	}
+//	return 0;
+//}
+//reverse array
+#include<iostream>
+//using namespace std;
+//int main(){
+//int a[]={4,6,7,8,9};
+//for(int i=4;i>=0;i--)
+//{
+//	cout<<a[i]<<"";
+//}
+// to write a sting 
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	char str[100];
+//	cout<<"enter a string";
+//	cin>>str;
+//	cout<<"you entered"<<str<<endl;
+//}
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	string str;
+//	cout<<"enter a string";
+//	getline(cin,str);
+//	cout<<"you entered"<<str<<endl;
+//	return 0;
+//}
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	string str1="hello";
+//	string str2="c++";
+//	int a=str1.compare(str2);
+//	if(a==0)
+//	   cout<<"both string are equal";
+//	else
+//	   cout<<"both string are not equal";
+//}
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	string str1="almas";
+//	string str2="c";
+//	int a=str1.compare(str2);
+//	if(a==0)
+//	   cout<<"both string are equal";
+//	else
+//	    cout<<"both string are not equal";
+//}
+#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	char key[25],buffers[25];
+//	cout<<"enter key string";
+//	cin.getline(key,25);
+//	cout<<"enter buffer string";
+//	cin.getline(buffers,25);
+//	strcat(key,buffers);
+//	cout<<"key="<<key<<endl;
+//	cout<<"buffer"<<buffers<<endl;
+//}
