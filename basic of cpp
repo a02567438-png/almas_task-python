@@ -1,0 +1,83 @@
+//#include<iostream>
+//using namespace std;
+//int main(int argc,char**){
+//	cout<<"hi all welcome you"<<endl;
+//	int a=10;
+//	int b=20;
+//	cout<<a+b<<endl;
+//	cout<<a-b<<endl;
+//	cout<<a/b<<endl;
+//	return 0;
+//}
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	cout<<"welcome to c++ program";
+//}
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	cout<<"welcome to my home";
+//}
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	cout<<"welcome to my lab";
+//	
+//}
+//unique element
+#include <stdio.h>
+
+int main()                                                                    
+{
+    int a[100], n, i, j, count;
+
+    printf("Enter size: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i=0; i<n; i++)
+        scanf("%d", &a[i]);
+
+    printf("Unique elements:\n");
+
+    for(i=0; i<n; i++)
+    {
+        count = 0;
+        for(j=0; j<n; j++)
+        {
+            if(a[i] == a[j])
+                count++;
+        }
+
+        if(count == 1)
+            printf("%d ", a[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
